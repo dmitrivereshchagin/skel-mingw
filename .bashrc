@@ -21,7 +21,7 @@ PROMPT_COMMAND=prompt_command
 
 export BLOCK_SIZE=human-readable
 
-export LESS=iMQRW
+export LESS=iMQR
 export LESSHISTFILE=/dev/null
 
 export MANWIDTH=80
