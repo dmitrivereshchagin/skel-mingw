@@ -1,0 +1,16 @@
+#
+# ~/.inputrc
+#
+
+$include /etc/inputrc.default
+
+$if mode=emacs
+	"\ep": history-search-backward
+	"\en": history-search-forward
+$endif
+
+set bell-style none
+
+set convert-meta off
+set input-meta on
+set output-meta on

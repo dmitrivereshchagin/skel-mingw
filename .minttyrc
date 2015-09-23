@@ -1,0 +1,22 @@
+#
+# ~/.minttyrc
+#
+
+CursorType=block
+CursorBlinks=no
+
+Font=Courier New
+FontHeight=12
+BoldAsFont=yes
+
+BackspaceSendsBS=yes
+AltFnShortcuts=no
+
+CopyAsRTF=no
+RightClickAction=extend
+
+Rows=43
+Scrollbar=none
+
+BellSound=no
+BellFlash=yes
