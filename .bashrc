@@ -10,7 +10,7 @@ shopt -s nocaseglob
 CDPATH=:$HOME
 HISTCONTROL=ignoreboth
 
-prompt_command () {
+prompt_command() {
     local status=$?
     PS1="\[\e[1;34m\]\W\[\e[m\] \$ "
     (( $status )) && PS1="\[\e[1;31m\]$status $PS1"
