@@ -4,16 +4,21 @@
 
 [[ $- != *i* ]] && return
 
-shopt -s cdspell
-shopt -s nocaseglob
+shopt -s cdspell nocaseglob
 
 CDPATH=:$HOME
+
 HISTCONTROL=ignoreboth
+HISTTIMEFORMAT='%H:%M '
 
 prompt_command() {
     local status=$?
+
     PS1="\[\e[1;34m\]\W\[\e[m\] \$ "
-    (( $status )) && PS1="\[\e[1;31m\]$status $PS1"
+    if (( $status )); then
+	PS1="\[\e[1;31m\]$status $PS1"
+    fi
+
     echo -ne "\e]0;$MSYSTEM: ${PWD/#$HOME/~}\a"
 }
 
@@ -21,7 +26,7 @@ PROMPT_COMMAND=prompt_command
 
 export BLOCK_SIZE=human-readable
 
-export LESS=iMQR
+export LESS=-iMQR
 export LESSHISTFILE=/dev/null
 
 export MANWIDTH=80
@@ -44,12 +49,12 @@ alias l='ls -l'
 alias la='ls -al'
 alias ll='ls -l'
 alias ls='ls --color=auto -F'
+alias mkdir='mkdir -p'
 alias vi=vim
 
 alias mgg='mingw-get upgrade'
 alias mgi='mingw-get install'
 alias mgl='mingw-get list'
-alias mgll='mingw-get list | less'
 alias mgr='mingw-get remove'
 alias mgu='mingw-get update'
 alias mtty='mintty -e bash &'
